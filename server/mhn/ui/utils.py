@@ -62,8 +62,9 @@ def _get_flag_ip(ipaddr):
     try:
         # Using threatstream's geospray API to get
         # the country code for this IP address.
-        r = requests.get(geo_api.format(ipaddr))
-        ccode = r.json()['countryCode']
+        ##r = requests.get(geo_api.format(ipaddr))
+        ##ccode = r.json()['countryCode']
+        return constants.DEFAULT_FLAG_URL
     except Exception:
         app.logger.warning("Could not determine flag for ip: {}".format(ipaddr))
         return constants.DEFAULT_FLAG_URL
